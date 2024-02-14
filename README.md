@@ -1,26 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Development
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
+This project uses NextJS as a framework for rendering the templates and StencilJS for creating web components.
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -29,8 +9,20 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### NodeJS and pnpm
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We use NodeJS for installing and managing our javascript packages. Check in your terminal with `node -v` if you have NodeJS installed. Otherwise install node [https://nodejs.org/en](https://nodejs.org/en) before you start.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+NodeJS comes with `npm`. We will not use `npm` to install our packages, but `pnpm` instead. This is so we can ensure super stable package resolution. To get started make sure you have `pnpm` installed by checking with `pnpm -v`. If you do not see a version use `npm install -g pnpm` to install `pnpm` globally on your machine.
+
+### 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command            | Action                                                                  |
+| :----------------- | :---------------------------------------------------------------------- |
+| `pnpm install`     | Installs dependencies                                                   |
+| `pnpm run dev`     | Starts local dev server at `localhost:3000`                             |
+| `pnpm run build`   | Build your production site to `./dist/`                                 |
+| `npm run lint`     | Run the linting scripts to ensure your code meets the project standards |
+| `npm run lint-fix` | Run the linting scripts and automatically fix all possible errors       |
