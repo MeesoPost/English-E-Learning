@@ -1,13 +1,11 @@
 ## Development
 
-This project uses NextJS as a framework for rendering the templates and StencilJS for creating web components.
+This project uses NextJS as a framework for rendering the templates and creating web components.
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ### NodeJS and pnpm
 
@@ -22,7 +20,6 @@ All commands are run from the root of the project, from a terminal:
 | Command            | Action                                                                  |
 | :----------------- | :---------------------------------------------------------------------- |
 | `pnpm install`     | Installs dependencies                                                   |
-| `pnpm run dev`     | Starts local dev server at `localhost:3000`                             |
-| `pnpm run build`   | Build your production site to `./dist/`                                 |
+| `pnpm run dev`     | Starts local dev server at `localhost:3000`                             |                            |
 | `npm run lint`     | Run the linting scripts to ensure your code meets the project standards |
 | `npm run lint-fix` | Run the linting scripts and automatically fix all possible errors       |
