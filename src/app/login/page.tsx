@@ -10,19 +10,30 @@ function LoginPage() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      });
 
-    // Example: Send a login request to your backend API
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
-    });
+      if (!response.ok) { 
+        // Handle general HTTP errors
+        throw new Error(`Login failed with status: ${response.status}`); 
+      }
 
-    if (response.ok) {
-      // Successful login - redirect user or handle success
-      console.log('Login successful!');
-    } else {
-      setErrorMessage('Invalid username or password');
+      const data = await response.json(); 
+
+      if (data.success) {
+        console.log('Login successful!');
+        // Redirect the user or handle successful login
+      } else {
+        setErrorMessage(data.error || 'Login failed');
+      }
+    } catch (error) { 
+      // Handle network errors and login errors
+      setErrorMessage('An error occurred');  
+      console.error(error);
     }
   };
 
@@ -54,5 +65,4 @@ function LoginPage() {
     </div>
   );
 }
-
 export default LoginPage;
